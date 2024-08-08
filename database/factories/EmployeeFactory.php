@@ -19,7 +19,7 @@ class EmployeeFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->email(),
-            'phone' => fake()->phone(),
+            'phone' => fake()->phoneNumber(),
             'address' => fake()->address(),
         ];
     }

@@ -34,7 +34,7 @@ class RegisterController extends Controller
 
             return response()->json(['token' => $token], 200);
         } catch (\Exception $e) {
-            Log::error('Error during registration: ' . $e->getMessage());
+            Log::error('Error during registration: ' . $e->getMessage(), ['exception' => $e]);
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
