@@ -13,4 +13,6 @@ Route::get('/user', function (Request $request) {
 Route::post('/auth/register', [RegisterController::class, 'register']);
 Route::post('/auth/login', [LoginController::class, 'login']);
 
-Route::apiResource('employees', EmployeeController::class);
+Route::middleware('auth:api')->group(function () {
+    Route::apiResource('employees', EmployeeController::class);
+});
